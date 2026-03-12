@@ -27,7 +27,7 @@ First, you must create the schemas and the target table structure.
 * Open your preferred SQL editor (pgAdmin, DBeaver, or VS Code).
 * Execute the script located at:  
     `scripts/bronze/ddl_initialize.sql`
-* click --> [ddl_initialize](https://in.search.yahoo.com/search?fr=mcafee&type=E210IN885G0&p=url+in+md+file)
+* click here :arrow_right: [ddl_bronze_layer.sql](scripts/bronze/ddl_bronze_layer.sql)
 
 ### 2. Connect via psql Shell
 To handle the bulk load of 500,000 records, use the `psql` command-line utility for maximum stability.
