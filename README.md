@@ -16,3 +16,28 @@ This project demonstrates a Data Warehouse implementation using PostgreSQL with 
 | Bronze | Stores raw ingested data from source systems |
 | Silver | Contains cleaned, standardized, and validated data |
 | Gold | Stores business-ready aggregated data for analytics and reporting |
+
+---
+## 🚀 Getting Started: Data Ingestion (Bronze Layer)
+
+Follow these steps to initialize the environment and load the raw customer data.
+
+### 1. Initialize the Database Structure
+First, you must create the schemas and the target table structure.
+* Open your preferred SQL editor (pgAdmin, DBeaver, or VS Code).
+* Execute the script located at:  
+    `scripts/bronze/ddl_initialize.sql`
+
+### 2. Connect via psql Shell
+To handle the bulk load of 500,000 records, use the `psql` command-line utility for maximum stability.
+
+1.  Open your terminal or command prompt.
+2.  Connect to your database using the following parameters:
+
+```bash
+psql -h localhost -U postgres -d DataWareHouse;
+```
+3. then run the command for copy the csv file into table. replace this C:\Users\AHIMSA\Downloads\customers-500000.csv with local file path .
+```bash
+\copy bronze.crm_customer_info from 'C:\Users\AHIMSA\Downloads\customers-500000.csv' with ( FORMAT csv, NULL '', HEADER true)
+```
