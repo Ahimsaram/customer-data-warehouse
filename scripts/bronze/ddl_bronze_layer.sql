@@ -13,23 +13,23 @@ Modified By :
 Modified Date :
 
 */
-DROP TABLE If Exists bronze.crm_cust_info;
 
-
-CREATE TABLE bronze.crm_cust_info (
-    cst_id              INT,
-    cst_key             TEXT,
-    cst_firstname       TEXT,
-    cst_lastname        TEXT,
-    cst_marital_status  TEXT,
-    cst_gndr            TEXT,
-    cst_create_date     DATE
+create Table if not exists bronze.crm_customer_info(
+customer_id int,
+customer_key TEXT,
+first_name TEXT,
+last_name TEXT,
+company TEXT,
+city TEXT,
+country TEXT,
+phone_primary TEXT,
+phone_secondary TEXT,
+email TEXT,
+subscription_Date TIMESTAMP,
+website TEXT
 );
 
-DROP TABLE If Exists bronze.crm_prd_info;
-
-
-CREATE TABLE bronze.crm_prd_info (
+create Table if not exists bronze.crm_prd_info (
     prd_id       INT,
     prd_key      TEXT,
     prd_nm       TEXT,
@@ -38,9 +38,8 @@ CREATE TABLE bronze.crm_prd_info (
     prd_start_dt TIMESTAMP,
     prd_end_dt   TIMESTAMP
 );
-DROP TABLE If Exists bronze.crm_sales_details;
 
-CREATE TABLE bronze.crm_sales_details (
+create Table if not exists bronze.crm_sales_details (
     sls_ord_num  TEXT,
     sls_prd_key  TEXT,
     sls_cust_id  INT,
@@ -52,22 +51,19 @@ CREATE TABLE bronze.crm_sales_details (
     sls_price    INT
 );
 
-DROP TABLE If Exists bronze.erp_loc_a101;
-
-CREATE TABLE bronze.erp_loc_a101 (
+create Table if not exists bronze.erp_loc_a101 (
     cid    TEXT,
     cntry  TEXT
 );
-DROP TABLE If Exists bronze.erp_cust_az12;
 
-CREATE TABLE bronze.erp_cust_az12 (
+create Table if not exists bronze.erp_cust_az12 (
     cid    TEXT,
     bdate  DATE,
     gen    TEXT
 );
-Drop TABLE if exists bronze.erp_px_cat_g1v2;
 
-CREATE TABLE bronze.erp_px_cat_g1v2 (
+
+create Table if not exists bronze.erp_px_cat_g1v2 (
     id           TEXT,
     cat          TEXT,
     subcat       TEXT,
