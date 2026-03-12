@@ -29,6 +29,17 @@ subscription_Date TIMESTAMP,
 website TEXT
 );
 
+
+CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
+    cst_id              INT,
+    cst_key             TEXT,
+    cst_firstname       TEXT,
+    cst_lastname        TEXT,
+    cst_marital_status  TEXT,
+    cst_gndr            TEXT,
+    cst_create_date     TIMESTAMP
+);
+
 create Table if not exists bronze.crm_prd_info (
     prd_id       INT,
     prd_key      TEXT,
